@@ -1,6 +1,6 @@
 <!-- Encabezado y título del proyecto -->
 <h1 align="center">
-  <img src="./assets/reloj.png" alt="Logo" width="200px"><br>
+  <img src="./assets/reloj.png" alt="Logo" width="100px"><br>
   Timer Increíble 🚀
 </h1>
 
@@ -11,7 +11,7 @@
 
 <!-- Demo y capturas de pantalla -->
 <p align="center">
-  <img src="./assets/timer.png" alt="Timer Demo" width="600px">
+  <img src="./assets/timer.png" alt="Timer Demo" width="200px">
 </p>
 
 <!-- Badges -->
