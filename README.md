@@ -1,7 +1,7 @@
 <!-- Encabezado y título del proyecto -->
 <h1 align="center">
   <img src="./assets/reloj.png" alt="Logo" width="100px"><br>
-  Timer ⏰
+  Timer
 </h1>
 
 <!-- Descripción del proyecto -->
