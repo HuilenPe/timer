@@ -1,12 +1,12 @@
 <!-- Encabezado y título del proyecto -->
 <h1 align="center">
   <img src="./assets/reloj.png" alt="Logo" width="100px"><br>
-  Timer Increíble 🚀
+  Timer 🚀
 </h1>
 
 <!-- Descripción del proyecto -->
 <p align="center">
-  ¡Un para ayudarte a administrar tu tiempo de manera eficiente! ⏰
+  ¡Para ayudarte a administrar tu tiempo de manera eficiente! ⏰
 </p>
 
 <!-- Demo y capturas de pantalla -->
