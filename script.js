@@ -1,24 +1,29 @@
-let hs = min = sec = ms = "0" + 0, startTimer;
-//Aquí se declaran las variables hs, min, sec, y ms y se les asigna el valor inicial de "0" + 0.    
-//También se declara la variable startTimer sin asignarle un valor inicial.
-// Estas variables se utilizan para mantener el estado del tiempo en horas, minutos, segundos y milisegundos respectivamente.
+// Estas variables se usan para mantener el estado del tiempo en hs, min, seg y miliseg.
+let hs = "0" + 0
+let min = "0" + 0
+let sec = "0" + 0
+let ms = "0" + 0
+//Esta variable se utiliza para almacenar el valor devuelto por la función setInterval. Se utiliza para detener el temporizador.
+let startTimer
 
+//Esta contantes obtienen referencias a los elementos del DOM que tienen los ids "start", "stop" y "reset", respectivamente, y los asigna a las variables startBtn, stopBtn y resetBtn.
 const startBtn = document.getElementById("start");
 const stopBtn = document.getElementById("stop");
 const resetBtn = document.getElementById("reset");
-//Estas líneas obtienen referencias a los elementos del DOM que tienen los ids "start", "stop" y "reset", respectivamente, y los asigna a las variables startBtn, stopBtn y resetBtn.
 
+//Aquí se agregan event listeners a los botones de start, stop y reset. Cuando se hace clic, se ejecutan las funciones que corresponda.
 startBtn.addEventListener("click", start)
 stopBtn.addEventListener("click", stop)
 resetBtn.addEventListener("click", reset)
-//Estas líneas agregan event listeners a los botones de start stop y reset. Cuando se hace clic, se ejecutan las funciones que corresponda.
 
+//Esta función se ejecuta cuando se hace clic en el botón de start.
+//Agrega "active" a start y elimina "active" de stop. Esto se hace para que el btn start se vea como presionado y el btn de parada se vea como activo.
 function start() {
     startBtn.classList.add("active")
     stopBtn.classList.remove("active")
-//Esta función se ejecuta cuando se hace clic en el botón de start.
-//Agrega "active" a start y elimina "active" de stop. Esto se hace para que el botón start se vea como si estuviera presionado y el botón de parada se vea como si no estuviera presionado.
-    startTimer = setInterval(() => { //setI es para ejecutar una función cada 10 milisegundos
+
+    //setInterval para ejecutar una función cada 10 milisegundos    
+    startTimer = setInterval(() => {
         ms++
         ms = ms < 10 ? "0" + ms : ms
 
@@ -42,25 +47,25 @@ function start() {
 
         putValue()
     }, 10)
-}
 
-function stop() {
-    startBtn.classList.remove("active")
-    stopBtn.classList.remove("stopActive")
-    clearInterval(startTimer)
-}
+    function stop() {
+        startBtn.classList.remove("active")
+        stopBtn.classList.remove("stopActive")
+        clearInterval(startTimer)
+    }
 
-function reset() {
-    startBtn.classList.remove("active")
-    stopBtn.classList.remove("stopActive")
-    clearInterval(startTimer)
-    hs = min = sec = ms = "0" + 0
-    putValue()
-}
+    function reset() {
+        startBtn.classList.remove("active")
+        stopBtn.classList.remove("stopActive")
+        clearInterval(startTimer)
+        hs = min = sec = ms = "0" + 0
+        putValue()
+    }
 
-function putValue() {
-    document.getElementById("millisecond").innerHTML = ms
-    document.getElementById("second").innerHTML = sec
-    document.getElementById("minute").innerHTML = min
-    document.getElementById("hour").innerHTML = hs
+    function putValue() {
+        document.getElementById("millisecond").innerHTML = ms
+        document.getElementById("second").innerHTML = sec
+        document.getElementById("minute").innerHTML = min
+        document.getElementById("hour").innerHTML = hs
+    }
 }
