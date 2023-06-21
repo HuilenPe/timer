@@ -11,7 +11,7 @@ const startBtn = document.getElementById("start");
 const stopBtn = document.getElementById("stop");
 const resetBtn = document.getElementById("reset");
 
-//Aquí se agregan event listeners a los botones de start, stop y reset. Cuando se hace clic, se ejecutan las funciones que corresponda.
+//Aquí se agrega un evento a los botones de start, stop y reset. Cuando se hace clic, se ejecutan las funciones que corresponda.
 startBtn.addEventListener("click", start)
 stopBtn.addEventListener("click", stop)
 resetBtn.addEventListener("click", reset)
@@ -22,13 +22,14 @@ function start() {
     startBtn.classList.add("active")
     stopBtn.classList.remove("active")
 
-    //setInterval para ejecutar una función cada 10 milisegundos    
+    //setInterval para ejecutar una función cada 10 milisegundos
+    //esta función se encarga de actualizar los valores de las variables del reloj y mostrarlos en el DOM.
     startTimer = setInterval(() => {
-        ms++
-        ms = ms < 10 ? "0" + ms : ms
+        ms++ 
+        ms = ms < 10 ? "0" + ms : ms //esta variable depende de una condición, si es menor a 10, se le agrega un 0 al inicio, si no, se deja como está.
 
         if (ms == 100) {
-            sec++
+            sec++ //
             sec = sec < 10 ? "0" + sec : sec
             ms = "0" + 0
         }
