@@ -25,7 +25,7 @@ function start() {
     //setInterval para ejecutar una función cada 10 milisegundos
     //esta función se encarga de actualizar los valores de las variables del reloj y mostrarlos en el DOM.
     startTimer = setInterval(() => {
-        ms++ 
+        ms++
         ms = ms < 10 ? "0" + ms : ms //esta variable depende de una condición, si es menor a 10, se le agrega un 0 al inicio, si no, se deja como está.
 
         if (ms == 100) {
@@ -48,7 +48,7 @@ function start() {
 
         putValue()
     }, 10)
-
+}
     function stop() {
         startBtn.classList.remove("active")
         stopBtn.classList.remove("stopActive")
@@ -69,4 +69,4 @@ function start() {
         document.getElementById("minute").innerHTML = min
         document.getElementById("hour").innerHTML = hs
     }
-}
+
